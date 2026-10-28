@@ -2,12 +2,13 @@
 
 :root {
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #101827;
+  background-color: #FFFDF8;
+  color: #30343B;
 }
 
 /* Custom scrollbars */
@@ -16,25 +17,40 @@ html {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #101827;
+  background: #FFFDF8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #E8E2D2;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #D5CEBE;
 }
 
 @keyframes floatSlow {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px) rotate(0.5deg);
   }
 }
 
 .animate-float {
   animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentlePulse 3s ease-in-out infinite;
 }

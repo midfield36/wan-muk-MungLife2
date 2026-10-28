@@ -1,109 +1,146 @@
 import React from 'react';
-import { ArrowRight, ArrowDown, XCircle, CheckCircle2 } from 'lucide-react';
+import { ArrowDown, ArrowRight, HelpCircle, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const BeforeAfterSection: React.FC = () => {
-  const beforePoints = [
-    '급할 때 근처 동물병원을 찾느라 여러 사이트를 검색한다.',
-    '반려견 동반 카페와 여행지를 일일이 알아본다.',
-    '예방접종이나 건강관리 일정을 놓치기 쉽다.',
+  const beforeCards = [
+    {
+      icon: '🔍',
+      title: '흩어진 정보 찾기',
+      desc: '필요한 반려 생활 정보를 블로그, 지도, 카페 등 여기저기 찾아야 하는 불편함',
+    },
+    {
+      icon: '⏰',
+      title: '놓치기 쉬운 일정',
+      desc: '예방접종이나 심장사상충 등 강아지의 중요한 일정을 놓치거나 기억하기 어려운 상황',
+    },
+    {
+      icon: '📁',
+      title: '정리 안 되는 기록',
+      desc: '병원 진료 내역과 반려견 건강 기록이 여러 메모장에 제각각 흩어져 있는 문제',
+    },
   ];
 
-  const afterPoints = [
-    '주변 동물병원과 반려견 관련 장소를 편리하게 찾는다.',
-    '강아지와 함께 갈 장소 정보를 쉽게 확인한다.',
-    '반려견의 중요한 일정과 건강 정보를 체계적으로 관리한다.',
+  const afterCards = [
+    {
+      icon: '🗺️',
+      title: '한눈에 바로 확인',
+      desc: '내 주변 24시 동물병원과 동반 카페, 산책로까지 필요한 정보를 쉽고 편리하게 확인',
+    },
+    {
+      icon: '📅',
+      title: '체계적인 일정 케어',
+      desc: '접종 주기부터 체중 변화까지 반려견의 중요한 일상과 건강을 스마트하게 관리',
+    },
+    {
+      icon: '🐾',
+      title: '행복한 여유 시간',
+      desc: '번거로운 검색과 걱정 대신, 소중한 우리 아이와 함께하는 시간을 더 여유롭게 즐기기',
+    },
   ];
 
   return (
-    <section id="before-after" className="py-14 md:py-20 bg-[#101827] relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#60E6CC] tracking-wider uppercase mb-2">
-            <span>BEFORE & AFTER</span>
+    <div className="space-y-0">
+      {/* SECTION 2: Before - 이런 불편함 있으셨나요? */}
+      <section id="before" className="py-14 md:py-20 bg-[#FFF9EE] border-t border-[#F5EADB] relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFE5B4]/50 border border-[#FFD59E] text-xs font-bold text-[#A85800] mb-3">
+              <HelpCircle className="w-3.5 h-3.5 text-[#A85800]" />
+              <span>BEFORE · 이런 불편함 있으셨나요?</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1E232B] tracking-tight">
+              강아지와 함께하는 일상, 생각보다 챙길 게 많죠?
+            </h2>
+            <p className="mt-2.5 text-sm sm:text-base text-[#69584C] font-medium">
+              우리 아이를 위해 알아보고 기억해야 할 것들이 너무 많아요.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-            강아지와 함께하는 생활, 이제 더 편리하게
-          </h2>
-          <p className="mt-2.5 text-sm sm:text-base text-[#A8B3C7]">
-            번거롭던 검색과 흩어진 메모 대신, 멍라이프 하나로 스마트하게 관리하세요.
-          </p>
-        </div>
 
-        {/* Comparison Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-11 gap-4 lg:gap-6 items-center">
-          {/* Before Card */}
-          <div className="lg:col-span-5 rounded-3xl p-6 sm:p-8 bg-[#182338]/80 border border-slate-700/80 shadow-md">
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-700/60">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center text-slate-400">
-                  <XCircle className="w-5 h-5 text-slate-400" />
-                </div>
+          {/* 3 Problem Cards in warm cream tones */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {beforeCards.map((item, idx) => (
+              <div
+                key={idx}
+                className="rounded-3xl p-6 sm:p-7 bg-white/90 border border-[#F0E4D4] shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between"
+              >
                 <div>
-                  <span className="text-[11px] font-bold text-slate-400 tracking-wider">BEFORE</span>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-200">멍라이프를 사용하기 전</h3>
+                  <div className="w-12 h-12 rounded-2xl bg-[#FFF4C7] border border-[#FFE2B8] flex items-center justify-center text-2xl mb-4 shadow-xs">
+                    {item.icon}
+                  </div>
+                  <span className="text-[11px] font-bold text-[#B08050] tracking-wider block mb-1">
+                    불편함 {idx + 1}
+                  </span>
+                  <h3 className="text-lg font-bold text-[#1E232B] mb-2.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-[#666E7D] leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
-              <span className="text-xs text-slate-500 font-medium">기존의 불편함</span>
-            </div>
-
-            <ul className="space-y-4">
-              {beforePoints.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">
-                    {idx + 1}
-                  </span>
-                  <span className="text-sm sm:text-base text-slate-300 leading-snug">
-                    {point}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            ))}
           </div>
 
-          {/* Transition Indicator (Desktop: Right arrow, Mobile: Down arrow) */}
-          <div className="lg:col-span-1 flex justify-center py-2 lg:py-0">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[#182338] border border-[#60E6CC]/40 flex items-center justify-center text-[#60E6CC] shadow-lg shadow-[#60E6CC]/10">
-              <ArrowRight className="hidden lg:block w-5 h-5 stroke-[2.5]" />
-              <ArrowDown className="block lg:hidden w-5 h-5 stroke-[2.5]" />
+          {/* Transition indicator arrow */}
+          <div className="flex justify-center pt-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#FFB8A4] text-xs font-extrabold text-[#FF806B] shadow-md shadow-[#FF806B]/10 animate-bounce">
+              <span>멍라이프를 만나면 이렇게 달라져요</span>
+              <ArrowDown className="w-3.5 h-3.5 stroke-[3]" />
             </div>
-          </div>
-
-          {/* After Card (Mint Accent) */}
-          <div className="lg:col-span-5 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-[#122b34] to-[#182338] border-2 border-[#60E6CC]/50 shadow-xl shadow-[#60E6CC]/10 relative overflow-hidden">
-            {/* Subtle glow highlight */}
-            <div className="absolute top-0 right-0 w-36 h-36 bg-[#60E6CC]/10 rounded-full blur-2xl pointer-events-none" />
-
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#60E6CC]/20">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#60E6CC]/20 border border-[#60E6CC]/40 flex items-center justify-center text-[#60E6CC]">
-                  <CheckCircle2 className="w-5 h-5 text-[#60E6CC]" />
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold text-[#60E6CC] tracking-wider">AFTER</span>
-                  <h3 className="text-base sm:text-lg font-bold text-white">멍라이프를 사용하면</h3>
-                </div>
-              </div>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-[#60E6CC]/15 text-[#60E6CC] font-bold">
-                간편한 해결
-              </span>
-            </div>
-
-            <ul className="space-y-4">
-              {afterPoints.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#60E6CC]/20 text-[#60E6CC] flex items-center justify-center text-xs font-mono font-bold">
-                    ✓
-                  </span>
-                  <span className="text-sm sm:text-base font-medium text-white leading-snug">
-                    {point}
-                  </span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* SECTION 3: After - 멍라이프와 함께라면 */}
+      <section id="after" className="py-14 md:py-20 bg-gradient-to-b from-[#EBF9F3] via-[#F0F8FF] to-[#FFFDF8] border-t border-[#BCEBD9]/60 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#BCEBD9]/60 border border-[#9CE0C6] text-xs font-bold text-[#156E52] mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-[#156E52]" />
+              <span>AFTER · 멍라이프와 함께라면</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1E232B] tracking-tight">
+              반려 생활이 한결 쉽고 행복해져요!
+            </h2>
+            <p className="mt-2.5 text-sm sm:text-base text-[#46655B] font-medium">
+              복잡했던 반려 생활을 더 간편하게, 소중한 순간은 더 특별하게.
+            </p>
+          </div>
+
+          {/* 3 Outcome Cards in Mint & Sky Blue */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {afterCards.map((item, idx) => (
+              <div
+                key={idx}
+                className="rounded-3xl p-6 sm:p-7 bg-white border-2 border-[#BCEBD9] shadow-md shadow-[#BCEBD9]/30 hover:border-[#86DFC0] hover:shadow-lg transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#D3F4E8] to-[#CDEBFF] border border-[#BCEBD9] flex items-center justify-center text-2xl mb-4 shadow-xs">
+                    {item.icon}
+                  </div>
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#1E7D5F]" />
+                    <span className="text-[11px] font-extrabold text-[#1E7D5F] tracking-wider">
+                      변화 {idx + 1}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-[#1E232B] mb-2.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-[#555E6D] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-[#F2ECE1] flex items-center text-xs text-[#1E7D5F] font-bold">
+                  <span>✓ 멍라이프로 스마트 해결</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };

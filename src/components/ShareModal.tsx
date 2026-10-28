@@ -147,26 +147,26 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onToast
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in">
       <div 
-        className="relative w-full max-w-md bg-[#182338] border border-slate-700/80 rounded-2xl p-6 shadow-2xl text-[#F8FAFC]"
+        className="relative w-full max-w-md bg-white border border-[#F2ECE1] rounded-3xl p-6 shadow-2xl text-[#30343B]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-700/60">
+        <div className="flex items-center justify-between pb-4 border-b border-[#F2ECE1]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#60E6CC]/15 border border-[#60E6CC]/30 flex items-center justify-center text-[#60E6CC]">
+            <div className="w-9 h-9 rounded-xl bg-[#FFF4C7] border border-[#FFE2B8] flex items-center justify-center text-[#FF806B]">
               <Share2 className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-white">친구 및 동료에게 공유하기</h3>
-              <p className="text-xs text-[#A8B3C7]">멍라이프 소개 페이지를 간편하게 전송하세요</p>
+              <h3 className="text-base font-extrabold text-[#1E232B]">친구 및 동료에게 공유하기</h3>
+              <p className="text-xs text-[#717784]">멍라이프 소개 페이지를 간편하게 전송하세요</p>
             </div>
           </div>
           <button
             onClick={onClose}
             aria-label="닫기"
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-700/50 transition-colors"
+            className="p-1.5 text-slate-400 hover:text-[#1E232B] rounded-xl hover:bg-slate-100 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -178,7 +178,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onToast
           <button
             type="button"
             onClick={handleKakaoShare}
-            className="w-full flex items-center justify-between px-4 py-3.5 bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-semibold rounded-xl transition-transform active:scale-[0.98] shadow-sm"
+            className="w-full flex items-center justify-between px-4 py-3.5 bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-bold rounded-2xl transition-transform active:scale-[0.98] shadow-sm"
           >
             <div className="flex items-center gap-3">
               <MessageCircle className="w-5 h-5 fill-[#191919]" />
@@ -191,31 +191,31 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onToast
           <button
             type="button"
             onClick={handleNativeShare}
-            className="w-full flex items-center justify-between px-4 py-3.5 bg-slate-800 hover:bg-slate-750 border border-slate-700 text-white font-medium rounded-xl transition-transform active:scale-[0.98]"
+            className="w-full flex items-center justify-between px-4 py-3.5 bg-[#FFF9F2] hover:bg-[#FFF2E5] border border-[#FFE2D6] text-[#1E232B] font-bold rounded-2xl transition-transform active:scale-[0.98]"
           >
             <div className="flex items-center gap-3">
-              <Share2 className="w-5 h-5 text-[#60E6CC]" />
+              <Share2 className="w-5 h-5 text-[#FF806B]" />
               <span className="text-sm">스마트폰 기본 공유</span>
             </div>
-            <span className="text-xs text-[#A8B3C7]">메시지 · SNS</span>
+            <span className="text-xs text-[#8C7D73]">메시지 · SNS</span>
           </button>
 
           {/* Link Copy Bar */}
           <div className="pt-2">
-            <label className="block text-xs font-medium text-[#A8B3C7] mb-1.5">
+            <label className="block text-xs font-bold text-[#717784] mb-1.5">
               랜딩페이지 주소 복사
             </label>
-            <div className="flex items-center gap-2 bg-[#101827] border border-slate-700/80 rounded-xl p-1.5">
+            <div className="flex items-center gap-2 bg-[#FAF7F0] border border-[#E8DFC8] rounded-2xl p-1.5">
               <input
                 type="text"
                 readOnly
                 value={currentUrl}
-                className="w-full bg-transparent px-3 py-1.5 text-xs text-slate-300 font-mono outline-none truncate"
+                className="w-full bg-transparent px-3 py-1.5 text-xs text-[#30343B] font-mono outline-none truncate"
               />
               <button
                 type="button"
                 onClick={handleCopy}
-                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-[#60E6CC] to-[#34D399] text-[#101827] text-xs font-bold rounded-lg hover:opacity-95 transition-opacity active:scale-95"
+                className="shrink-0 flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-[#FF806B] to-[#FF6F59] text-white text-xs font-extrabold rounded-xl hover:opacity-95 transition-opacity active:scale-95 shadow-xs"
               >
                 {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copied ? '복사됨' : '복사'}</span>
@@ -224,20 +224,20 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onToast
           </div>
 
           {/* QR code view toggle */}
-          <div className="pt-2 flex items-center justify-between text-xs text-[#A8B3C7]">
+          <div className="pt-2 flex items-center justify-between text-xs text-[#717784]">
             <button
               type="button"
               onClick={() => setShowQr(!showQr)}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 hover:text-[#FF806B] font-medium transition-colors"
             >
-              <QrCode className="w-4 h-4 text-[#60E6CC]" />
+              <QrCode className="w-4 h-4 text-[#FF806B]" />
               <span>{showQr ? 'QR코드 접기' : '모바일용 QR코드 보기'}</span>
             </button>
 
             <button
               type="button"
               onClick={() => setIsConfiguringKakao(!isConfiguringKakao)}
-              className="text-[11px] underline text-slate-400 hover:text-slate-200"
+              className="text-[11px] underline text-slate-500 hover:text-slate-700"
             >
               {isConfiguringKakao ? '카카오 설정 닫기' : '카카오 API키 설정'}
             </button>
@@ -245,9 +245,9 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onToast
 
           {/* QR Section */}
           {showQr && (
-            <div className="p-4 bg-[#101827] border border-slate-700/70 rounded-xl text-center">
-              <p className="text-xs text-slate-300 mb-2 font-medium">스마트폰 카메라로 스캔하여 열기</p>
-              <div className="inline-block p-2 bg-white rounded-lg">
+            <div className="p-4 bg-[#FFFDF8] border border-[#FFE2D6] rounded-2xl text-center shadow-xs">
+              <p className="text-xs text-[#555E6D] mb-2 font-semibold">스마트폰 카메라로 스캔하여 열기</p>
+              <div className="inline-block p-2 bg-white rounded-xl border border-[#F2ECE1] shadow-xs">
                 <img
                   src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=${encodeURIComponent(currentUrl)}`}
                   alt="QR Code"
@@ -260,8 +260,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onToast
 
           {/* Kakao Key Config Option */}
           {isConfiguringKakao && (
-            <div className="p-3.5 bg-[#101827] border border-slate-700 rounded-xl space-y-2 text-xs">
-              <p className="text-slate-300">
+            <div className="p-3.5 bg-[#FFF9F2] border border-[#FFE2D6] rounded-2xl space-y-2 text-xs">
+              <p className="text-[#555E6D] leading-relaxed">
                 카카오 개발자 콘솔의 <strong>JavaScript 키</strong>를 입력하면 맞춤 카카오 메시지 카드가 전송됩니다. 미입력 시에도 기본 공유 및 링크 복사가 완벽하게 작동합니다.
               </p>
               <div className="flex gap-2">
@@ -270,12 +270,12 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onToast
                   placeholder="카카오 JavaScript 키 붙여넣기"
                   value={kakaoKeyInput}
                   onChange={(e) => setKakaoKeyInput(e.target.value)}
-                  className="w-full bg-[#182338] border border-slate-700 px-2.5 py-1.5 rounded-lg text-white font-mono text-xs outline-none focus:border-[#60E6CC]"
+                  className="w-full bg-white border border-[#E8DFC8] px-2.5 py-1.5 rounded-xl text-[#1E232B] font-mono text-xs outline-none focus:border-[#FF806B]"
                 />
                 <button
                   type="button"
                   onClick={saveKakaoKey}
-                  className="px-3 py-1.5 bg-[#60E6CC] text-slate-900 font-bold rounded-lg shrink-0"
+                  className="px-3.5 py-1.5 bg-[#FF806B] text-white font-bold rounded-xl shrink-0 hover:bg-[#FF6F59]"
                 >
                   저장
                 </button>

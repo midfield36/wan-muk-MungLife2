@@ -1,150 +1,144 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0B111E"/>
-      <stop offset="50%" stop-color="#101827"/>
-      <stop offset="100%" stop-color="#182338"/>
-    </linearGradient>
-    <linearGradient id="mintGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#60E6CC"/>
-      <stop offset="100%" stop-color="#34D399"/>
+    <linearGradient id="pastelBg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="35%" stop-color="#FFF8E8"/>
+      <stop offset="70%" stop-color="#FFF2EE"/>
+      <stop offset="100%" stop-color="#F2F8FF"/>
     </linearGradient>
     <linearGradient id="coralGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#FF9F83"/>
-      <stop offset="100%" stop-color="#F43F5E"/>
+      <stop offset="0%" stop-color="#FF9683"/>
+      <stop offset="100%" stop-color="#FF6F59"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="60" result="blur"/>
+    <linearGradient id="mintGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C5F0E0"/>
+      <stop offset="100%" stop-color="#A6E6CE"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="70" result="blur"/>
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#8C6E64" flood-opacity="0.12"/>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#pastelBg)"/>
 
-  <!-- Ambient Glows -->
-  <circle cx="150" cy="120" r="180" fill="#60E6CC" fill-opacity="0.12" filter="url(#glow)"/>
-  <circle cx="1050" cy="500" r="220" fill="#FF9F83" fill-opacity="0.08" filter="url(#glow)"/>
-  <circle cx="850" cy="200" r="260" fill="#60E6CC" fill-opacity="0.1" filter="url(#glow)"/>
-
-  <!-- Subtle Grid Lines -->
-  <g opacity="0.04" stroke="#FFFFFF" stroke-width="1">
-    <line x1="0" y1="126" x2="1200" y2="126"/>
-    <line x1="0" y1="252" x2="1200" y2="252"/>
-    <line x1="0" y1="378" x2="1200" y2="378"/>
-    <line x1="0" y1="504" x2="1200" y2="504"/>
-    <line x1="240" y1="0" x2="240" y2="630"/>
-    <line x1="480" y1="0" x2="480" y2="630"/>
-    <line x1="720" y1="0" x2="720" y2="630"/>
-    <line x1="960" y1="0" x2="960" y2="630"/>
-  </g>
+  <!-- Warm ambient blurred pastel circles -->
+  <circle cx="180" cy="140" r="220" fill="#FFF4C7" fill-opacity="0.7" filter="url(#softGlow)"/>
+  <circle cx="950" cy="200" r="260" fill="#FFD5CB" fill-opacity="0.5" filter="url(#softGlow)"/>
+  <circle cx="1100" cy="500" r="220" fill="#CDEBFF" fill-opacity="0.6" filter="url(#softGlow)"/>
+  <circle cx="500" cy="520" r="200" fill="#BCEBD9" fill-opacity="0.5" filter="url(#softGlow)"/>
 
   <!-- Left Content Area -->
-  <g transform="translate(100, 110)">
+  <g transform="translate(100, 100)">
     <!-- Brand Tagline Badge -->
     <g transform="translate(0, 0)">
-      <rect width="210" height="38" rx="8" fill="#182338" stroke="#60E6CC" stroke-width="1.2" stroke-opacity="0.4"/>
-      <circle cx="20" cy="19" r="4" fill="#60E6CC"/>
-      <text x="32" y="24" fill="#60E6CC" font-family="'Pretendard', -apple-system, sans-serif" font-size="14" font-weight="700" letter-spacing="1">전국 반려견 보호자 필수 앱</text>
+      <rect width="260" height="42" rx="21" fill="#FFF4C7" stroke="#FFB8A4" stroke-width="1.5"/>
+      <text x="24" y="27" fill="#E65D47" font-family="'Pretendard', sans-serif" font-size="15" font-weight="800">
+        🐾 전국 반려인을 위한 필수 앱
+      </text>
     </g>
 
-    <!-- Logo & Name -->
+    <!-- Logo & Brand Name -->
     <g transform="translate(0, 68)">
-      <rect width="56" height="56" rx="16" fill="#182338" stroke="#60E6CC" stroke-width="1.5" stroke-opacity="0.5"/>
-      <!-- Paw -->
-      <circle cx="21" cy="20" r="4.5" fill="#60E6CC"/>
-      <circle cx="35" cy="20" r="4.5" fill="#60E6CC"/>
-      <circle cx="14" cy="30" r="4" fill="#60E6CC"/>
-      <circle cx="42" cy="30" r="4" fill="#60E6CC"/>
-      <path d="M28 28C21 28 17.5 32 17.5 38.5C17.5 42.5 21 44.5 28 44.5C35 44.5 38.5 42.5 38.5 38.5C38.5 32 35 28 28 28Z" fill="#60E6CC"/>
+      <rect width="60" height="60" rx="18" fill="#FFFFFF" stroke="#FFE0D6" stroke-width="2" filter="url(#cardShadow)"/>
+      <circle cx="23" cy="22" r="5" fill="#FF806B"/>
+      <circle cx="37" cy="22" r="5" fill="#FF806B"/>
+      <circle cx="14" cy="32" r="4.5" fill="#FF806B"/>
+      <circle cx="46" cy="32" r="4.5" fill="#FF806B"/>
+      <path d="M30 30C22 30 18 35 18 42C18 46.5 22 49.5 30 49.5C38 49.5 42 46.5 42 42C42 35 38 30 30 30Z" fill="#FF806B"/>
 
-      <text x="72" y="38" fill="#F8FAFC" font-family="'Pretendard', -apple-system, sans-serif" font-size="34" font-weight="800" letter-spacing="-0.5">멍라이프 <tspan fill="#60E6CC" font-size="28" font-weight="700">MungLife</tspan></text>
+      <text x="78" y="42" fill="#1E232B" font-family="'Pretendard', sans-serif" font-size="38" font-weight="900" letter-spacing="-0.5">
+        멍라이프 <tspan fill="#FF806B" font-size="30" font-weight="800">MungLife</tspan>
+      </text>
     </g>
 
-    <!-- Main Title -->
-    <text x="0" y="200" fill="#FFFFFF" font-family="'Pretendard', -apple-system, sans-serif" font-size="52" font-weight="800" letter-spacing="-1.5">
-      우리 강아지와 함께하는 일상,
+    <!-- Main Headline -->
+    <text x="0" y="200" fill="#1E232B" font-family="'Pretendard', sans-serif" font-size="52" font-weight="900" letter-spacing="-1.5">
+      우리 강아지와 함께하는
     </text>
-    <text x="0" y="265" fill="#60E6CC" font-family="'Pretendard', -apple-system, sans-serif" font-size="52" font-weight="800" letter-spacing="-1.5">
-      멍라이프 하나로!
+    <text x="0" y="265" fill="#FF6F59" font-family="'Pretendard', sans-serif" font-size="52" font-weight="900" letter-spacing="-1.5">
+      모든 순간, 멍라이프!
     </text>
 
     <!-- Subtitle -->
-    <text x="0" y="325" fill="#94A3B8" font-family="'Pretendard', -apple-system, sans-serif" font-size="21" font-weight="500">
-      동물병원부터 반려견 동반 장소, 건강관리까지
-    </text>
-    <text x="0" y="358" fill="#94A3B8" font-family="'Pretendard', -apple-system, sans-serif" font-size="21" font-weight="500">
-      반려견에게 필요한 정보를 쉽고 편리하게 만나보세요.
+    <text x="0" y="325" fill="#585E6A" font-family="'Pretendard', sans-serif" font-size="22" font-weight="500">
+      소중한 반려견의 하루를 더 쉽고, 더 편리하고, 더 행복하게.
     </text>
 
-    <!-- Features strip -->
-    <g transform="translate(0, 400)">
-      <rect width="520" height="54" rx="12" fill="#182338" stroke="#334155" stroke-width="1"/>
-      <text x="24" y="33" fill="#E2E8F0" font-family="'Pretendard', -apple-system, sans-serif" font-size="16" font-weight="600">
-        📍 주변 장소 검색   ·   🚨 응급 동물병원   ·   📋 강아지 건강관리
-      </text>
+    <!-- 3 Core Feature Tags -->
+    <g transform="translate(0, 380)">
+      <g transform="translate(0, 0)">
+        <rect width="160" height="48" rx="14" fill="#FFF4C7" stroke="#FFE58F" stroke-width="1.2"/>
+        <text x="80" y="30" text-anchor="middle" fill="#875800" font-family="'Pretendard', sans-serif" font-size="15" font-weight="700">📍 내 주변 장소</text>
+      </g>
+      <g transform="translate(175, 0)">
+        <rect width="170" height="48" rx="14" fill="#FFDDD4" stroke="#FFB8A4" stroke-width="1.2"/>
+        <text x="85" y="30" text-anchor="middle" fill="#B33A26" font-family="'Pretendard', sans-serif" font-size="15" font-weight="700">🚨 24시 응급병원</text>
+      </g>
+      <g transform="translate(360, 0)">
+        <rect width="170" height="48" rx="14" fill="#D3F4E8" stroke="#BCEBD9" stroke-width="1.2"/>
+        <text x="85" y="30" text-anchor="middle" fill="#176E50" font-family="'Pretendard', sans-serif" font-size="15" font-weight="700">📋 예방접종 수첩</text>
+      </g>
     </g>
   </g>
 
-  <!-- Right Visual / Phone Mockup Representation -->
-  <g transform="translate(820, 80)">
+  <!-- Right Visual: Smartphone Mockup with Pastel Styling -->
+  <g transform="translate(830, 80)">
     <!-- Phone frame shadow -->
-    <rect x="-10" y="10" width="280" height="490" rx="44" fill="#000000" fill-opacity="0.4" filter="url(#glow)"/>
-    <!-- Phone body -->
-    <rect width="280" height="480" rx="40" fill="#182338" stroke="#334155" stroke-width="4"/>
-    <!-- Screen area -->
-    <rect x="10" y="10" width="260" height="460" rx="32" fill="#101827"/>
-    <!-- Dynamic island notch -->
-    <rect x="95" y="18" width="70" height="18" rx="9" fill="#0B111E"/>
-    
-    <!-- Mini App Header -->
-    <circle cx="36" cy="62" r="12" fill="#1E293B"/>
-    <circle cx="36" cy="62" r="6" fill="#60E6CC"/>
-    <text x="56" y="66" fill="#F8FAFC" font-family="'Pretendard', sans-serif" font-size="14" font-weight="800">멍라이프</text>
-    <rect x="200" y="52" width="50" height="22" rx="6" fill="#60E6CC" fill-opacity="0.15"/>
-    <text x="208" y="67" fill="#60E6CC" font-family="'Pretendard', sans-serif" font-size="11" font-weight="700">LIVE</text>
+    <rect x="-12" y="12" width="280" height="485" rx="44" fill="#3D2924" fill-opacity="0.12" filter="url(#softGlow)"/>
+    <!-- Phone outer body -->
+    <rect width="280" height="480" rx="40" fill="#FFFFFF" stroke="#F0EAE1" stroke-width="6"/>
+    <!-- Screen -->
+    <rect x="8" y="8" width="264" height="464" rx="32" fill="#FFFDF8"/>
+    <!-- Dynamic island -->
+    <rect x="95" y="16" width="74" height="18" rx="9" fill="#1E232B"/>
 
-    <!-- Card 1: Dog Profile -->
-    <g transform="translate(24, 90)">
-      <rect width="212" height="74" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1"/>
-      <circle cx="36" cy="37" r="22" fill="#334155"/>
-      <text x="36" y="43" text-anchor="middle" font-size="20">🐶</text>
-      <text x="68" y="32" fill="#F8FAFC" font-family="'Pretendard', sans-serif" font-size="13" font-weight="700">몽이 (골든리트리버)</text>
-      <text x="68" y="48" fill="#60E6CC" font-family="'Pretendard', sans-serif" font-size="11" font-weight="600">3세 · 28kg · 종합백신 완료</text>
+    <!-- Inside Screen Mockup -->
+    <!-- App Header -->
+    <g transform="translate(24, 52)">
+      <rect width="232" height="68" rx="16" fill="#FFF4C7" stroke="#FFEAA7" stroke-width="1"/>
+      <circle cx="36" cy="34" r="20" fill="#FFFFFF"/>
+      <text x="36" y="41" text-anchor="middle" font-size="22">🐶</text>
+      <text x="68" y="28" fill="#1E232B" font-family="'Pretendard', sans-serif" font-size="13" font-weight="800">초코</text>
+      <text x="96" y="28" fill="#FF806B" font-family="'Pretendard', sans-serif" font-size="11" font-weight="700">골든리트리버</text>
+      <text x="68" y="48" fill="#717784" font-family="'Pretendard', sans-serif" font-size="10" font-weight="500">다음 광견병 예방접종 D-14</text>
     </g>
 
-    <!-- Card 2: Quick Features -->
-    <g transform="translate(24, 178)">
-      <rect width="98" height="88" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1"/>
-      <circle cx="49" cy="34" r="16" fill="#60E6CC" fill-opacity="0.15"/>
-      <text x="49" y="39" text-anchor="middle" font-size="15">🏥</text>
-      <text x="49" y="62" text-anchor="middle" fill="#F8FAFC" font-family="'Pretendard', sans-serif" font-size="11" font-weight="700">24시 동물병원</text>
-      <text x="49" y="76" text-anchor="middle" fill="#60E6CC" font-family="'Pretendard', sans-serif" font-size="9" font-weight="600">내 주변 4곳</text>
+    <!-- Emergency bar -->
+    <g transform="translate(24, 130)">
+      <rect width="232" height="52" rx="14" fill="#FFECE6" stroke="#FFC9BA" stroke-width="1"/>
+      <circle cx="28" cy="26" r="14" fill="#FF806B"/>
+      <text x="28" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12">🚨</text>
+      <text x="50" y="24" fill="#B33A26" font-family="'Pretendard', sans-serif" font-size="11" font-weight="800">24시 응급 동물병원</text>
+      <text x="50" y="39" fill="#8A4A3E" font-family="'Pretendard', sans-serif" font-size="9" font-weight="600">내 주변 즉시 진료 가능한 곳 3개</text>
+    </g>
 
-      <g transform="translate(114, 0)">
-        <rect width="98" height="88" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1"/>
-        <circle cx="49" cy="34" r="16" fill="#FF9F83" fill-opacity="0.15"/>
-        <text x="49" y="39" text-anchor="middle" font-size="15">☕</text>
-        <text x="49" y="62" text-anchor="middle" fill="#F8FAFC" font-family="'Pretendard', sans-serif" font-size="11" font-weight="700">동반 카페/식당</text>
-        <text x="49" y="76" text-anchor="middle" fill="#FF9F83" font-family="'Pretendard', sans-serif" font-size="9" font-weight="600">실시간 추천</text>
+    <!-- Quick Buttons Grid -->
+    <g transform="translate(24, 194)">
+      <g transform="translate(0, 0)">
+        <rect width="110" height="80" rx="14" fill="#EBF9F3" stroke="#BCEBD9" stroke-width="1"/>
+        <text x="55" y="35" text-anchor="middle" font-size="20">📍</text>
+        <text x="55" y="56" text-anchor="middle" fill="#176E50" font-family="'Pretendard', sans-serif" font-size="11" font-weight="800">동반 장소 찾기</text>
+        <text x="55" y="69" text-anchor="middle" fill="#5A8A79" font-family="'Pretendard', sans-serif" font-size="9" font-weight="500">카페·식당·공원</text>
+      </g>
+      <g transform="translate(122, 0)">
+        <rect width="110" height="80" rx="14" fill="#F3EEFF" stroke="#E5D9FF" stroke-width="1"/>
+        <text x="55" y="35" text-anchor="middle" font-size="20">📋</text>
+        <text x="55" y="56" text-anchor="middle" fill="#5F4299" font-family="'Pretendard', sans-serif" font-size="11" font-weight="800">반려견 수첩</text>
+        <text x="55" y="69" text-anchor="middle" fill="#7E68AA" font-family="'Pretendard', sans-serif" font-size="9" font-weight="500">체중·접종 캘린더</text>
       </g>
     </g>
 
-    <!-- Card 3: Map view mockup -->
-    <g transform="translate(24, 280)">
-      <rect width="212" height="150" rx="14" fill="#0B111E" stroke="#334155" stroke-width="1"/>
-      <!-- Map grid roads -->
-      <path d="M10 50 Q 80 40 140 70 T 202 110" stroke="#334155" stroke-width="6" fill="none"/>
-      <path d="M70 10 L 70 140" stroke="#334155" stroke-width="4" fill="none"/>
-      <path d="M150 10 L 150 140" stroke="#334155" stroke-width="4" fill="none"/>
-      <!-- Pin 1 -->
-      <circle cx="70" cy="50" r="10" fill="#60E6CC"/>
-      <circle cx="70" cy="50" r="4" fill="#101827"/>
-      <!-- Pin 2 (Emergency) -->
-      <circle cx="150" cy="90" r="10" fill="#FF9F83"/>
-      <circle cx="150" cy="90" r="4" fill="#101827"/>
-      <!-- Bottom place pill inside map -->
-      <rect x="16" y="110" width="180" height="28" rx="8" fill="#1E293B"/>
-      <text x="26" y="128" fill="#F8FAFC" font-family="'Pretendard', sans-serif" font-size="10" font-weight="600">📍 해든 동물의료센터 (500m)</text>
+    <!-- Bottom Place Card -->
+    <g transform="translate(24, 286)">
+      <rect width="232" height="140" rx="16" fill="#F4F8FC" stroke="#CDEBFF" stroke-width="1"/>
+      <rect x="12" y="12" width="208" height="68" rx="10" fill="#E1EEF9"/>
+      <text x="116" y="50" text-anchor="middle" fill="#4B6B88" font-family="'Pretendard', sans-serif" font-size="11" font-weight="600">🗺️ 실시간 지도 탐색</text>
+      <text x="16" y="102" fill="#1E232B" font-family="'Pretendard', sans-serif" font-size="12" font-weight="800">포포 펫카페 & 운동장</text>
+      <text x="16" y="120" fill="#64748B" font-family="'Pretendard', sans-serif" font-size="10">마포구 연남동 · 천연잔디 · 420m</text>
     </g>
   </g>
 </svg>

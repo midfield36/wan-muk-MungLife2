@@ -1,6 +1,6 @@
 {
   "name": "멍라이프(MungLife) – 반려견 생활 필수 앱",
-  "description": "동물병원부터 반려견 동반 장소, 건강관리까지! 반려견과 함께하는 일상에 필요한 정보를 쉽고 편리하게 만나보세요.",
+  "description": "소중한 반려견의 하루를 더 쉽고, 더 편리하고, 더 행복하게! 동물병원부터 반려견 동반 장소, 건강관리까지 한곳에 담은 반려 생활 앱",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
